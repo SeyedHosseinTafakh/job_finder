@@ -35,9 +35,6 @@ mycursor.execute("CREATE TABLE company_profile (id INTEGER AUTO_INCREMENT PRIMAR
 mycursor.execute("CREATE TABLE job (id INTEGER AUTO_INCREMENT PRIMARY key,companyId VARCHAR(255), jobName VARCHAR(255),location VARCHAR (255) , languageRequierment VARCHAR (255),experienceRequierment VARCHAR (255), skillNeeded VARCHAR (255),visaSponsorship VARCHAR (255),position VARCHAR (255),speciality VARCHAR (255),salaryRange VARCHAR (255),jobDescribtion VARCHAR (255))")
 
 
-mycursor.execute("DROP DATABASE  jobFinder;")
-
-mydb.commit()
 
 
 
