@@ -8,6 +8,7 @@ from flask import Flask
 from flask_restful import Resource, Api
 from Classes.User.users import *
 from Classes.Companies.Company import *
+from Classes.Jobs.Jobs import *
 from flask import jsonify
 
 
@@ -23,7 +24,7 @@ api.add_resource(logIn, '/login')
 api.add_resource(update_user,'/update_user')
 api.add_resource(Company, '/company')
 api.add_resource(update_company, '/update_company')
-
+api.add_resource(Jobs,'/job')
 
 if __name__ == '__main__':
     app.run(debug=True)

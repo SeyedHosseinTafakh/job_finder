@@ -61,7 +61,14 @@ class Company(Resource):
         mycursor.execute(sql,values)
         mydb.commit()
         return jsonify(True)
-    
+    def delete(self):
+        parser = reqparse.RequestParser()
+        parser.add_argument('id',required=True)
+        args = parser.parse_args()
+        sql = ('delete from company_profile where id = ' + args['id'])
+        mycursor.execute(sql)
+        mydb.commit()
+        return True
     
     
 class update_company(Resource):

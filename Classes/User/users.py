@@ -109,7 +109,14 @@ class User(Resource):
         mycursor.execute(sql, val)
         mydb.commit()
         return args
-
+    def delete(self):
+            parser = reqparse.RequestParser()
+            parser.add_argument('id',required=True)
+            args = parser.parse_args()
+            sql = ('delete from user where id = ' + args['id'])
+            mycursor.execute(sql)
+            mydb.commit()
+            return True
 class logIn(Resource):
     def post(self):
         parser = reqparse.RequestParser()
